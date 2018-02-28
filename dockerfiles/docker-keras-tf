@@ -1,0 +1,19 @@
+# docker build --no-cache=true -t keras-tf -f docker-keras-tf .
+FROM tensorflow/tensorflow:1.5.0
+LABEL maintainer="Mario David <mariojmdavid@gmail.com>"
+
+ENV KERAS_BACKEND tensorflow
+
+RUN mkdir -p /tmp/setup && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        git \
+        wget \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install seaborn && \
+    pip install keras
+
+WORKDIR /home
+CMD ["/bin/bash"]
+
