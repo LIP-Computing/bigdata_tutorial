@@ -13,6 +13,7 @@ RUN mkdir -p /tmp/setup && \
     apt-get install -y --no-install-recommends \
         git \
         libtbb2 \
+        root-plugin-graf2d-asimage \
         tar \
         wget \
     && rm -rf /var/lib/apt/lists/*
