@@ -25,7 +25,13 @@ RUN cd /usr/local && \
     pip install seaborn && \
     pip install rootpy && \
     pip install keras && \
-    git clone https://github.com/GilesStrong/ML_Tutorials.git
+    git clone https://github.com/GilesStrong/ML_Tutorials.git /notebooks/ML_Tutorials && \
+    mkdir /notebooks/ML_Tutorials/data && \
+    cd /notebooks/ML_Tutorials/data && \
+    wget https://cernbox.cern.ch/index.php/s/ENW3iemn2qvku5y/download -O csv_data.tgz && \
+    tar -zxvf csv_data.tgz && \
+    rm csv_data.tgz && \
+    cd ../../../
 
 EXPOSE 8888
 WORKDIR "/notebooks"
