@@ -12,6 +12,7 @@ RUN mkdir -p /tmp/setup && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
         git \
+        libxpm4 \
         libtbb2 \
         root-plugin-graf2d-asimage \
         tar \
@@ -24,6 +25,7 @@ RUN cd /usr/local && \
     rm -f /usr/local/root_v6.12.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz && \
     pip install seaborn && \
     pip install rootpy && \
+    pip install metakernel zmq && \
     pip install keras && \
     git clone https://github.com/GilesStrong/ML_Tutorials.git /notebooks/ML_Tutorials && \
     mkdir /notebooks/ML_Tutorials/data && \
